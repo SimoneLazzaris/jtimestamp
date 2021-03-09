@@ -16,7 +16,7 @@ void hprint(char * flux) {
 	tim2=tim.tv_sec+(tim.tv_nsec/1E9);
 	if (line++>0) 
 		printf(",\n");
-	printf("{\"timestamp\":%f,\"flux\":\"%s\",\"line\":\"",flux, tim2);
+	printf("{\"timestamp\":%f,\"flux\":\"%s\",\"line\":\"",tim2, flux);
 }
 void jprint(char *s, char* flux) {
 	char h=0;

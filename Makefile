@@ -1,5 +1,5 @@
 jts: jts.c
-	gcc -o $@ $^
+	gcc -Wall -o $@ $^
 
 jts-static: jts.c
-	gcc -static -o $@ $^
+	gcc -Wall -static -o $@ $^
