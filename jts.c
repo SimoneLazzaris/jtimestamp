@@ -86,6 +86,7 @@ void parent(pid_t pid, int outpipe[2], int errpipe[2]) {
 	}
 	waitpid(pid, &status, 0);
 	close(outpipe[0]);
+	close(errpipe[0]);
 	if (line>0)
 		printf("\n");
 	printf("]\n");
