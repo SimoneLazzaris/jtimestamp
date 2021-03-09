@@ -64,7 +64,7 @@ void parent(pid_t pid, int outpipe[2], int errpipe[2]) {
 		}
 		if (p[0].revents & POLLIN) {
 			char buffer[4096];
-			ssize_t count = read(outpipe[0], buffer, sizeof(buffer));
+			ssize_t count = read(outpipe[0], buffer, sizeof(buffer)-1);
 			if (count == -1) {
 				break;
 			}
@@ -73,7 +73,7 @@ void parent(pid_t pid, int outpipe[2], int errpipe[2]) {
 		}
 		if (p[1].revents & POLLIN) {
 			char buffer[4096];
-			ssize_t count = read(errpipe[0], buffer, sizeof(buffer));
+			ssize_t count = read(errpipe[0], buffer, sizeof(buffer)-1);
 			if (count == -1) {
 				break;
 			}
